@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="expires" content="0" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <title>Dungeon Game</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+
+    <body>
+        <header>
+            <button id="dltDataBtn" class="styled-button">Delete Data</button>
+            <h1>Town</h1>
+        </header>
+
+        <div id="overlay"></div>
+        <div id="menu" class="hidden">
+            <button
+                onclick="toggleShow('menu')"
+                id="closeMenu"
+                class="styled-button"
+            >
+                Close
+            </button>
+            <div id="shopMenu" class="hidden">
+                <h1>Shop</h1>
+                <h3>Main Stats</h3>
+                <div
+                    class="shop-buttons"
+                    onmouseover="shopHover(event)"
+                    onclick="shopBuy(event)"
+                >
+                    <button
+                        onclick="restButton()"
+                        id="restButton"
+                        class="styled-button"
+                    >
+                        Rest
+                    </button>
+                    <button class="styled-button">Health</button>
+                    <button class="styled-button">Strength</button>
+                    <button class="styled-button">Stamina</button>
+                    <button class="styled-button">Agility</button>
+                    <button class="styled-button">Luck</button>
+                    <!--<button class="styled-button">Mana</button>-->
+                </div>
+                <div class="menu-footer">
+                    <div id="description">
+                        <p>Description:</p>
+                        <p id="itemDesc"></p>
+                    </div>
+                    <div id="stats-menu">
+                        <p data-key="health">Health :</p>
+                        <p data-key="strength">Strength :</p>
+                        <p data-key="stamina">Stamina :</p>
+                        <p data-key="agility">Agility :</p>
+                        <p data-key="luck">Luck :</p>
+                        <!--<p data-key="mana">Mana :</p>-->
+                    </div>
+                    <div id="cost">
+                        <p>Cost:</p>
+                        <p id="itemCost">0 Gold</p>
+                    </div>
+                </div>
+            </div>
+            <div id="achievementsMenu" class="hidden">
+                <h1>Achievements</h1>
+                <div class="achievement-boxes"></div>
+            </div>
+        </div>
+
+        <div id="currencyBox" class="box"></div>
+
+        <div class="game-button-container">
+            <button id="dungeonsBtn" class="styled-button game-button">
+                Dungeons
+            </button>
+            <br />
+            <button
+                onclick="toggleShow('shopMenu')"
+                id="shopBtn"
+                class="styled-button game-button"
+            >
+                Shop
+            </button>
+            <br />
+            <button
+                onclick="toggleShow('achievementsMenu')"
+                id="achievementsBtn"
+                class="styled-button game-button"
+            >
+                Achievements
+            </button>
+        </div>
+
+        <div id="townImage" class="box"></div>
+    </body>
+
+    <script src="save.js"></script>
+    <script src="town.js"></script>
+</html>
