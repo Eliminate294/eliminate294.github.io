@@ -48,6 +48,9 @@ window.addEventListener("loadComplete", function () {
             menu.style.display = "block";
         });
 
+    level = document.getElementById("levelBox");
+    level.textContent = `Level ${Math.floor(window.xp / 100)}`;
+
     updateStats();
 });
 

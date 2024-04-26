@@ -168,6 +168,15 @@ body {
     height: 100%;
 }
 
+#levelBox {
+    color: #fff;
+    position: absolute;
+    width: 5%;
+    height: 5%;
+    bottom: 50px;
+    left: 10px;
+}
+
 #townImage {
     position: absolute;
     width: 25%;

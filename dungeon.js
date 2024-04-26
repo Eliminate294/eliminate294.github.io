@@ -3,11 +3,22 @@ window.addEventListener("loadComplete", function () {
 
     let randomNumber = Math.floor(Math.random() * 10);
     if (randomNumber <= 4) {
-        const enemy = new Enemy("Goblin", 100, 0.8, 10);
+        const enemy = new Enemy(
+            "Goblin",
+            100 * (Math.floor(window.xp / 100) + 1),
+            0.8,
+            10
+        );
         combat(enemy);
         if (enemy.health <= 0) {
-            let xp = parseInt(window.xp) + Math.floor(Math.random() * 21 + 30);
+            let xp =
+                parseInt(window.xp) +
+                Math.floor(Math.random() * 21 + 30) *
+                    (Math.floor(window.xp / 200) + 1);
             window.xp = xp;
+            gold =
+                200 +
+                Math.floor(Math.random() * 400 * (currentStats["luck"] / 10));
         } else if (window.currentStats["health"] <= 0) {
             wipeData();
         }
